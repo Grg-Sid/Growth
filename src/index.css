@@ -5,9 +5,9 @@
   /* --color-font  */
 }
 
-html{
-  font-size: 62.5%;
-}
+/* html{
+  font-size: 62.5%; */
+/* } */
 
 
 
@@ -25,7 +25,14 @@ code {
     monospace;
 }
 
+.navbarcolor{
+  /* background-color: black !important; */
+  background-color: var(--color-secondary) !important;
+}
+.textColor{
+  color: var(--color-primary) !important  ;
 
+}
 
 .wrapPopup{
   background-color: rgba(0,0,0,0.7);
@@ -43,4 +50,56 @@ code {
 /* Margin */
 .margin-2{
   margin: 2vh 1vw !important;
+}
+.margin-1{
+  margin: 2vh auto;
+}
+.heading{
+  color: var(--color-primary);
+  font-size: 3rem;
+}
+
+
+/* Resume Template */
+.resume-template{
+  min-width: 40vw;
+  max-width: 40vw;
+  margin: 2vh 2vw ;
+  border: 2px solid black;
+}
+.middle{
+  text-align: center;
+  margin: auto;
+}
+
+.bigFont{
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.headingResume{
+  border-bottom: 1px solid black;
+  /* border-width: 50% !important; */
+
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.wrapHeading{
+  margin: 1.5rem 0;
+}
+
+.subHeadingResume{
+  font-weight: 600;
+}
+.subsubHeadingResume{
+  font-weight: 500;
+}
+.flex-seperate{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Space top */
+.space{
+  margin: 2vh 1vw;
 }

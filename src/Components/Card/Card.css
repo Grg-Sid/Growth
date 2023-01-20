@@ -1,0 +1,34 @@
+.wrapcard{
+    /* border: 10px; */
+    background-color: var(--color-text);
+    /* border: 2px solid black; */
+    width: 18vw;
+    padding: 4vh 2vw;
+    min-height: 40vh;
+    height: 50vh;
+    margin: 2vh 0;
+    border-radius: 10px;
+}
+.cardHeading{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.cardSubHeading{
+    font-weight: 600;
+
+}
+.wrapcardPremium{
+    background-color: black;
+    color: #fff;
+
+}
+.cardPrice{
+    font-size: 2rem;
+}
+.btnCard{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    min-width: 40vw;
+    margin: auto;
+}

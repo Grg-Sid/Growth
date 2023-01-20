@@ -1,0 +1,77 @@
+
+
+.main-footer{
+    background-color: lightgrey;
+    display: flex;
+    font-size: 62.5%;
+}
+.footer-info{
+    width: 33.5%;
+}
+.bottom-footer_about{
+    margin: 1rem 0rem 5rem 12rem;
+    /* width: 25%; */
+    font-size: 1.5em;
+}
+.footer-social-icons{
+    /* width: 20%; */
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.5em;
+    margin: 4em 5em 5em 14em;
+}
+.footer-social-icons :hover{
+    transform: scale3d(1.2,1.2,1.2);
+}
+.MainName{
+    margin: 5rem 0rem 0rem 7rem;
+    font-size: 3rem;
+}
+.footer-Heading{
+    font-weight: 900;
+    margin: 1rem 0rem 2rem 20rem;
+    font-size: 2rem;
+}
+.footer-links{
+    width: 33%;
+    margin:5rem 4rem 3rem 0rem;
+}
+.footer-Contact{
+    width: 33.5%;
+    margin: 5rem 4rem 3rem 0rem;
+    /* font-size: 1rem; */
+}
+.links{
+    padding: 1rem;
+    margin-left:17rem ;
+    list-style: none;
+    font-size: 1.5rem;
+}
+/* .links :hover {
+    color: #0d6efd;
+} */
+ .mail ,.phone{
+    padding: 1rem;
+    display: flex;
+    font-size: 2rem;
+    /* justify-content: space-between; */
+}
+.location{
+    padding: 1rem;
+    display: flex;
+    font-size: 3rem;
+}
+.contact-Heading{
+    font-weight: 900;
+    margin: 1rem 0rem 1rem 13rem;
+    font-size: 2rem;
+}
+.contact-detail{
+    margin-left:1rem ;
+    font-size: 1.5rem;
+}
+.main-location{
+    margin-left:1rem ;
+    font-size: 2rem;
+    font-weight: 500;
+}

@@ -3,7 +3,9 @@
     margin: 10vh auto;
     background-color: white;
     color: black;
-    border: 2px solid black;
+    border: 2px solid var(--color-light);
+    box-shadow: 0,0,10px, 10px var(--color-light);
+
     padding: 4vh 4vw;
     
     display: flex;

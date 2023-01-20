@@ -14,30 +14,63 @@ import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
+const rName = /^([a-zA-Z ]{2,20})$/;
+
 const Login = () => {
   const nav = useNavigate();
+  const initialLoginValue = {
+    email: "",
+    password: "",
+  };
   const [loginValues, setLoginValues] = useState(initialLoginValue);
-
+  // const [formErrors, setFormErrors] = useState({});
   // Submit button
-  useEffect(() => {
-    let loginKey = localStorage.getItem("loginKey");
-    if (!loginKey) {
-      nav("/login");
-    }
-  }, []);
+  // useEffect(() => {
+  //   let loginKey = localStorage.getItem("loginKey");
+  //   if (!loginKey) {
+  //     nav("/login");
+  //   }
+  // }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    console.log(name, value);
+    // console.log('check',formValues);
+    setLoginValues({ ...loginValues, [name]: value });
+    console.log(loginValues);
+  };
+  // useEffect(() => {}, [loginValues]);
+
+  const registerFunction = () => {
+    nav("/register");
+  };
   const loginFunction = () => {
+    // Checking name
+    if (!rName.test(loginValues.email)) {
+      // formErrors.name = "Enter valid name";
+      console.log("error");
+    }
+
     console.log("login");
+    const data = {
+      // username: loginValues.username,
+      // password: loginValues.password,
+      username: "kharepushkar@gmail.com",
+      password: "123",
+    };
+    console.log(data);
     axios
-      .post(`https://iitj-saumyxa.onrender.com`, data)
+      .post(`https://iitj-saumyxa.onrender.com/api/auth/login`, data)
       .then((e) => {
         console.log(e);
         setLoginValues(initialLoginValue);
-        if (e.data) {
-          localStorage.setItem("loginKey", JSON.stringify(e.data));
-          // logoutFlag= false;
-          console.log(e.data);
-          nav("/");
-        }
+        // if (e.data) {
+        //   localStorage.setItem("loginKey", JSON.stringify(e.data));
+        //   // logoutFlag= false;
+        //   console.log(e.data);
+        //   nav("/");
+        // }
       })
       .catch((err) => {
         console.log(err);
@@ -53,12 +86,19 @@ const Login = () => {
   return (
     <div>
       <form className="loginForm">
+        <span className="margin-1 heading">Login</span>
+        <span className="margin-1 ">
+          Please fill in the details below to Get started!
+        </span>
         {/* Email */}
         <TextField
           // id="input-with-icon-textfield"
           label="Email"
           className="margin-2"
           type="email"
+          name="email"
+          value={loginValues.email}
+          onChange={handleChange}
           InputProps={{
             endAdornment: (
               <InputAdornment position="start">
@@ -68,7 +108,6 @@ const Login = () => {
           }}
           variant="standard"
         />
-
         {/* Password */}
         <FormControl
           // sx={{ m: 1, width: "25ch" }}
@@ -80,6 +119,9 @@ const Login = () => {
           </InputLabel>
           <Input
             id="standard-adornment-password"
+            onChange={handleChange}
+            name="password"
+            value={loginValues.password}
             type={showPassword ? "text" : "password"}
             endAdornment={
               <InputAdornment position="end">
@@ -100,8 +142,18 @@ const Login = () => {
           className="btnLogin"
           onClick={loginFunction}
         >
-          Login
+          Enter
         </Button>
+        <span className="margin-1">OR</span>
+        {/* Register */}
+        <Button
+          variant="contained"
+          className="btnLogin"
+          onClick={registerFunction}
+        >
+          Register
+        </Button>
+        <span className="margin-1">Dont have an Account?</span>
       </form>
     </div>
   );

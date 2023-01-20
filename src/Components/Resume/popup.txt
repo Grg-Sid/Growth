@@ -26,3 +26,7 @@ function openPopup (){
         >
           +Add data
         </Button>
+
+
+
+        210x297mm

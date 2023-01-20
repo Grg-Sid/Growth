@@ -1,0 +1,17 @@
+.homeHeading{
+    font-size: 3rem;
+    max-width: 60%;
+}
+.smallHomeHeading{
+    font-size: 1.3rem;
+    max-width: 50%;
+}
+.btnHome{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+.flexBox{
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
