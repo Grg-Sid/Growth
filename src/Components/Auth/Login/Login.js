@@ -12,7 +12,7 @@ import IconButton from "@mui/material/IconButton";
 // import OutlinedInput from "@mui/material/OutlinedInput";
 import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
-// import axios from "axios";
+import axios from "axios";
 
 const Login = () => {
   const nav = useNavigate();
@@ -25,19 +25,21 @@ const Login = () => {
   }, []);
   const loginFunction = () => {
     console.log("login");
-    // axios.post(`link/`,data)
-    // .then((e)=>{
-    //   console.log(e);
-    // setLoginValues(initialLoginValue);
-    //       if (e.data) {
-    //         localStorage.setItem("loginKey", JSON.stringify(e.data));
-    //         // logoutFlag= false;
-    //         console.log(e.data);
-    //         nav("/");
-    // })
-    // .catch((err)=>{
-    //   console.log(err);
-    // })
+    axios
+      .post(`https://iitj-saumyxa.onrender.com`, data)
+      .then((e) => {
+        console.log(e);
+        setLoginValues(initialLoginValue);
+        if (e.data) {
+          localStorage.setItem("loginKey", JSON.stringify(e.data));
+          // logoutFlag= false;
+          console.log(e.data);
+          nav("/");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   const [showPassword, setShowPassword] = React.useState(false);
 
