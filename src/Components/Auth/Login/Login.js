@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { TextField } from "@mui/material";
@@ -16,6 +16,8 @@ import axios from "axios";
 
 const Login = () => {
   const nav = useNavigate();
+  const [loginValues, setLoginValues] = useState(initialLoginValue);
+
   // Submit button
   useEffect(() => {
     let loginKey = localStorage.getItem("loginKey");
