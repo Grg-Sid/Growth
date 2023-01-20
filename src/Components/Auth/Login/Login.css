@@ -1,0 +1,22 @@
+.loginForm{
+    max-width: 500px;
+    margin: 10vh auto;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 4vh 4vw;
+    
+    display: flex;
+    flex-direction: column;
+}
+.btnLogin{
+    min-width: 10vw;
+    width: 30%;
+    margin: auto !important;
+    background-color: var(--color-light) !important;
+    color: var(--color-primary) !important;
+    border: 2px solid var(--color-primary) !important;
+    border-radius: 10px !important;
+    font-weight: 900 !important;
+    font-size: 1.2rem !important;
+}

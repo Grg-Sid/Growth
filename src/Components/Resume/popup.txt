@@ -1,0 +1,28 @@
+const [display, setDisplay] = useState(false);
+
+{display && (
+    <div className= "wrapPopup">
+        <div className = "popup" >
+
+
+        </div> 
+    < / div>
+)
+
+
+function openPopup (){
+    if(display==false)
+        setDisplay(true);
+    else
+        setDisplay(false);
+}
+
+
+{/* Button */}
+        <Button
+          variant="contained"
+          className="btnLogin"
+          onClick={openPopup}
+        >
+          +Add data
+        </Button>
