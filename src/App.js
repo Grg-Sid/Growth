@@ -7,6 +7,7 @@ import Resume from "./Components/Resume/Resume";
 import ResumeFormat from "./Components/Resume/ResumeFormat";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
+import FAQs from "./Components/FAQ/FAQ";
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/resumeTemplate" element={<ResumeFormat />} />
         </Routes>
       </BrowserRouter>
+      <FAQs />
       <Footer />
       {/* <Login /> */}
       {/* <Register /> */}

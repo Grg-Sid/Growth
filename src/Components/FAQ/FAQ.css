@@ -1,0 +1,13 @@
+.Main-FAQ{
+    margin:5rem 0rem 5rem 22rem;
+    width: 70%;
+    font-size: 62.5%;
+    /* font-size: 1rem; */
+}
+.Main-FAQ button{
+    font-size: 2em;
+}
+.faqhead{
+    font-size: 5em;
+    font-weight: 600;
+}
