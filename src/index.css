@@ -35,7 +35,7 @@ code {
 }
 
 .wrapPopup{
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   min-height: 100vh;
   height: max-content;
 }
@@ -56,7 +56,7 @@ code {
 }
 .heading{
   color: var(--color-primary);
-  font-size: 3rem;
+  font-size: 2.7rem;
 }
 
 
@@ -102,4 +102,13 @@ code {
 /* Space top */
 .space{
   margin: 2vh 1vw;
+}
+
+.resumeWrap{
+  display: flex;
+}
+
+.inputData{
+  display: grid;
+  grid-template-columns: auto auto;
 }

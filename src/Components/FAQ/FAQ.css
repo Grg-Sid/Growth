@@ -5,9 +5,12 @@
     /* font-size: 1rem; */
 }
 .Main-FAQ button{
-    font-size: 2em;
+    font-size: 1.3rem;
 }
 .faqhead{
     font-size: 5em;
     font-weight: 600;
+}
+.accordion-collapse{
+    font-size: 1.2rem;
 }

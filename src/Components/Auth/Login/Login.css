@@ -13,7 +13,7 @@
 }
 .btnLogin{
     min-width: 10vw;
-    width: 30%;
+    width: 35%;
     margin: auto !important;
     background-color: var(--color-light) !important;
     color: var(--color-primary) !important;

@@ -6,28 +6,37 @@ import {
   faTwitter,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faLocationDot,
-  faPhone,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faLocationDot,
+//   faPhone,
+//   faEnvelope,
+// } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
-import main from "../../images/logo.png";
+import main from "../../images/whitell.png";
+import { Button } from "@mui/material";
 
 const Footer = () => {
   return (
     <>
       <div className="main-footer">
         <div className="footer-info">
-          <div>
-            <img className="MainName" src={main} alt="" />
-          </div>
-          <div class="bottom-footer_about">
-            We are India's most trusted and transparent crowdfunding platform,
-            with a vision to create a social impact. Our unique model allows
-            people from across the globe to donate towards raising funds for
-            products required by NGOs and charities in India, which are then
-            delivered to them by us.
+          <div className="subsribedLetter">
+            <span className="bold"> Subscribe to Newsletter</span>
+            <div className="detSubs">
+              Subscribe now to receive tips on how to take your business to the
+              next level.
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                className="inputSubs"
+              />
+              <Button variant="contained" className="btnSubs">
+                Subscribe
+              </Button>
+            </div>
           </div>
           <div className="footer-social-icons">
             <FontAwesomeIcon icon={faFacebook} />
@@ -37,38 +46,21 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-links">
-          <div className="footer-Heading">Links</div>
-          <ul className="footerLink">
-            <li className="links">Home</li>
-            <li className="links">About Us</li>
-            <li className="links">FAQs</li>
-            <li className="links">Contact</li>
-          </ul>
-        </div>
-
-        <div className="footer-Contact">
-          <div className="contact-Heading">Contact Us</div>
-          <div>
-            <div className="location">
-              <FontAwesomeIcon icon={faLocationDot} />
-              <div className="main-location"> Head Office , India</div>
-            </div>
-            <div className="contact-detail">
-              27th KM Milestone, Delhi - Meerut Expy, Ghaziabad, Uttar Pradesh
-              201009
-            </div>
-          </div>
-          <div className="phone">
-            <FontAwesomeIcon icon={faPhone} />
-            <div className="contact-detail"> 9999955665</div>
-          </div>
-          <div className="mail">
-            <FontAwesomeIcon icon={faEnvelope} />
-            <div className="contact-detail"> info@donate.com</div>
-          </div>
+        <div className="grid-3">
+          <span className="linkHeading">Company</span>
+          <span className="linkHeading">Resources</span>
+          <span className="linkHeading">Contact</span>
+          <span className="links">About</span>
+          <span className="links">Resume</span>
+          <span className="links">kharepushkar2804@gmail.com</span>
+          <span className="links">Our Process</span>
+          {/* <span className="links"></span> */}
+          <span className="links">Examples</span>
+          <span className="links"></span>
+          <span className="links">Job Interviews</span>
         </div>
       </div>
+      <div className="copyright">© 2023 Growth. All rights reserved</div>
     </>
   );
 };

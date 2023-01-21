@@ -9,9 +9,18 @@
 .btnHome{
     background-color: var(--color-primary);
     color: var(--color-text);
+    margin: 5vh 0 !important;
 }
 .flexBox{
     display: flex;
     margin: auto;
     width: fit-content;
+}
+.pricing{
+    min-height: 80vh;
+    margin-top: 5vh;
+    /* border: 2px solid red; */
+}
+.homeSection{
+    padding: 10vh 10vw;
 }

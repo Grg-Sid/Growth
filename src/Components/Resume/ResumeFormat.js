@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { sections, information } from "../../Data";
+// import { sections, information } from "../../Data";
+import { TextField } from "@mui/material";
+import InputAdornment from "@mui/material/InputAdornment";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const ResumeFormat = () => {
   const [name, setName] = useState("Pushkar Khare");
@@ -41,7 +44,7 @@ const ResumeFormat = () => {
   // Sections
 
   return (
-    <>
+    <div className="resumeWrap">
       <div className="resume-template">
         {/* Name section */}
         <div className="middle bigFont">{name}</div>
@@ -100,8 +103,41 @@ const ResumeFormat = () => {
           </ul>
         </div>
       </div>
-      <div className="inputData"></div>
-    </>
+      <div className="inputData">
+        Name
+        <TextField label="Full Name" variant="standard" />
+        {/* Email */}
+        <TextField
+          label="Email"
+          type="email"
+          variant="standard"
+          autoComplete="username"
+          //   sx={{ m: 1, width: "50ch" }}
+        />
+        {/* Mobile */}
+        <TextField
+          label="Mobile"
+          type="number"
+          variant="standard"
+          // autoComplete="username"
+          //   sx={{ m: 1, width: "50ch" }}
+        />
+        {/* Current Job Title */}
+        <TextField
+          label="Job title"
+          variant="standard"
+          autoComplete="username"
+          //   sx={{ m: 1, width: "50ch" }}
+        />
+        {/* Address */}
+        <TextField
+          label="Address"
+          variant="standard"
+          autoComplete="username"
+          //   sx={{ m: 1, width: "50ch" }}
+        />
+      </div>
+    </div>
   );
 };
 

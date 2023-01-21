@@ -1,0 +1,32 @@
+.line{
+    color: #1080F1;
+    width: 646px;
+}
+.baselist{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.baselistelement{
+
+height: 26px;
+font-family: 'Public Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 13.93px;
+line-height: 16px;
+display: flex;
+align-items: flex-end;
+color: rgba(0, 0, 0, 0.44);
+}
+.save{
+    width: 257px;
+height: 38px;
+border: 1px solid #C7C7C7;
+margin:47px;
+}
+.continue{
+ width: 257px;
+height: 38px;
+background: #4891FF;
+}

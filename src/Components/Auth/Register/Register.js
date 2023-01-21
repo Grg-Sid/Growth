@@ -5,13 +5,13 @@ import { TextField } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import IconButton from "@mui/material/IconButton";
 // import OutlinedInput from "@mui/material/OutlinedInput";
 import Button from "@mui/material/Button";
 import axios from "axios";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import Input from "@mui/material/Input";
 
 const Register = () => {
@@ -49,25 +49,25 @@ const Register = () => {
     console.log(loginValues);
   };
 
-  useEffect(() => {
-    let registerKey = localStorage.getItem("registerKey");
-    if (!registerKey) {
-      nav("/login");
-    }
-  }, []);
+  // useEffect(() => {
+  //   let registerKey = localStorage.getItem("registerKey");
+  //   if (!registerKey) {
+  //     nav("/login");
+  //   }
+  // }, []);
   //   Submit Button
   function registerFunction() {
     console.log("register");
     const data = {
-      username: loginValues.email,
+      username: loginValues.username,
       password: loginValues.password,
     };
     console.log(data);
     axios
       .post(`https://iitj-saumyxa.onrender.com/api/auth/register`, data)
       .then((e) => {
-        console.log(e);
-        if (e.data === "Registered") {
+        console.log(e.request.status);
+        if (e.request.status === 201) {
           localStorage.setItem("otpKey", "active");
           nav("/enterOtp");
         }
@@ -76,11 +76,11 @@ const Register = () => {
         console.log(err);
       });
   }
-  const [showPassword, setShowPassword] = React.useState(false);
   const [showPassword2, setShowPassword2] = React.useState(false);
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
+
+  const [showPassword, setShowPassword] = React.useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -89,95 +89,97 @@ const Register = () => {
     event.preventDefault();
   };
   return (
-    <div>
-      <form className="registerForm">
-        <span className="margin-1 heading">Signup</span>
-        <span className="margin-1 ">
-          Please fill in the details below to Get started!
-        </span>
-        {/* Email */}
-        <TextField
-          // id="input-with-icon-textfield"
-          label="Email"
-          className="margin-2"
-          type="email"
-          name="username"
-          value={loginValues.username}
-          onChange={handleChange}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="start">
-                <AccountCircle />
-              </InputAdornment>
-            ),
-          }}
-          variant="standard"
-        />
-        {/* Password */}
-        <FormControl
-          // sx={{ m: 1, width: "25ch" }}
-          className="margin-2"
-          variant="standard"
-        >
-          <InputLabel htmlFor="standard-adornment-password">
-            Password
-          </InputLabel>
-          <Input
-            id="standard-adornment-password"
+    <div className="wrapPopup">
+      <div className="popup">
+        <form className="registerForm">
+          <span className="margin-1 heading">Signup</span>
+          <span className="margin-1 ">
+            Please fill in the details below to Get started!
+          </span>
+          {/* Email */}
+          <TextField
+            // id="input-with-icon-textfield"
+            label="Email"
+            className="margin-2"
+            type="email"
+            name="username"
+            value={loginValues.username}
             onChange={handleChange}
-            name="password"
-            value={loginValues.password}
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              ),
+            }}
+            variant="standard"
           />
-        </FormControl>
-        {/* Confirm Password */}
-        <FormControl
-          // sx={{ m: 1, width: "25ch" }}
-          className="margin-2"
-          variant="standard"
-        >
-          <InputLabel htmlFor="standard-adornment-password">
-            Confirm Password
-          </InputLabel>
-          <Input
-            id="standard-adornment-password"
-            onChange={handleChange}
-            name="cpassword"
-            value={loginValues.cpassword}
-            type={showPassword2 ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword2}
-                  onMouseDown={handleMouseDownPassword2}
-                >
-                  {showPassword2 ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl>
-        {/* Submit */}
-        <Button
-          variant="contained"
-          className="btnLogin"
-          onClick={registerFunction}
-        >
-          Register
-        </Button>
-      </form>
+          {/* Password */}
+          <FormControl
+            // sx={{ m: 1, width: "25ch" }}
+            className="margin-2"
+            variant="standard"
+          >
+            <InputLabel htmlFor="standard-adornment-password">
+              Password
+            </InputLabel>
+            <Input
+              id="standard-adornment-password"
+              onChange={handleChange}
+              name="password"
+              value={loginValues.password}
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+          </FormControl>
+          {/* Confirm Password */}
+          <FormControl
+            // sx={{ m: 1, width: "25ch" }}
+            className="margin-2"
+            variant="standard"
+          >
+            <InputLabel htmlFor="standard-adornment-password">
+              Confirm Password
+            </InputLabel>
+            <Input
+              id="standard-adornment-password"
+              onChange={handleChange}
+              name="cpassword"
+              value={loginValues.cpassword}
+              type={showPassword2 ? "text" : "password"}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword2}
+                    onMouseDown={handleMouseDownPassword2}
+                  >
+                    {showPassword2 ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+          </FormControl>
+          {/* Submit */}
+          <Button
+            variant="contained"
+            className="btnLogin "
+            onClick={registerFunction}
+          >
+            Register
+          </Button>
+        </form>
+      </div>
     </div>
   );
 };
