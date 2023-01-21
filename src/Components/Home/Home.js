@@ -3,6 +3,7 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Card from "../Card/Card";
+import HomeImg from "../../images/homeImg.png";
 
 const Home = () => {
   const nav = useNavigate();
@@ -45,12 +46,16 @@ const Home = () => {
           <Button variant="contained" className="btnHome" onClick={login}>
             Get Started
           </Button>
+          <div>
+            <img src={HomeImg} alt="Home" />
+          </div>
         </div>
         <div className="homeHeading middle">
-          A powerful solution to grow your startup
+          Essential tools for propelling your Career forward
         </div>
         <div className="smallHomeHeading middle">
-          A powerful solution to grow your startup
+          applying for dream job is now easy and fast, choose from 100 of free,
+          designer made template and customize them with a few click
         </div>
         <div className="pricing">
           <div className="homeHeading middle">Pricing</div>

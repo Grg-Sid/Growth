@@ -12,6 +12,7 @@ import Contact from "./Components/Contact/Contact";
 import Otp from "./Components/Auth/OTP/Otp";
 import Form from "./Components/Form/Form";
 import Nav from "./Components/Navbar/Nav";
+import Template from "./Components/Template/Template";
 // import ButtonAppBar from "./Components/Navbar/Navbar";
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/enterOtp" element={<Otp />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/template" element={<Template />} />
 
           <Route path="/resumeTemplate" element={<ResumeFormat />} />
         </Routes>

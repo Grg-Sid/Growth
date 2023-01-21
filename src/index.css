@@ -111,4 +111,16 @@ code {
 .inputData{
   display: grid;
   grid-template-columns: auto auto;
+  gap: 2rem;
+  /* border: 2px solid black; */
+}
+.btnAdd{
+  width: 80%;
+  font-size: 0.8rem;
+  border: 0;
+  background-color: var(--color-light);
+  color: var(--color-primary);
+}
+.flex{
+  display: flex;
 }

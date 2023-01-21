@@ -1,0 +1,25 @@
+.templateHeading{
+    font-size: 2rem;
+    margin: 2vh auto;
+}
+.templateBox{
+    justify-content: space-around;
+    margin-bottom: 5vh;
+    /* height: 70vh; */
+}
+.templateImg{
+    border: 1px solid black;
+    margin: auto;
+    /* bor */
+    cursor: pointer;
+    object-fit: contain;
+    transition: all 0.4s;
+}
+.templateImg:hover{
+    transform: scale(1.01);
+}
+.templateImg >*{
+    width: 100%;
+    margin: auto;
+
+  }
